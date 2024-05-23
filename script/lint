@@ -1,0 +1,10 @@
+#!/bin/bash
+
+set -xe
+
+rm -r .clj-kondo
+mkdir -p .clj-kondo
+clojure -M:clj-kondo --version
+clojure -M:clj-kondo --lint "$(clojure -Spath)" --copy-configs --skip-lint
+tree .clj-kondo
+clojure -M:clj-kondo --lint src --config '{:output {:format :text :summary false}}'

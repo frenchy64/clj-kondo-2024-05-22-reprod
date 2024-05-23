@@ -1,0 +1,31 @@
++ rm -r .clj-kondo
++ mkdir -p .clj-kondo
++ clojure -M:clj-kondo --version
+clj-kondo v2024.03.13
+++ clojure -Spath
++ clojure -M:clj-kondo --lint src:/Users/ambrose/.m2/repository/org/clojure/clojure/1.11.1/clojure-1.11.1.jar:/Users/ambrose/.m2/repository/org/typedclojure/typed.clj.runtime/1.2.1/typed.clj.runtime-1.2.1.jar:/Users/ambrose/.m2/repository/org/clojure/core.specs.alpha/0.2.62/core.specs.alpha-0.2.62.jar:/Users/ambrose/.m2/repository/org/clojure/spec.alpha/0.3.218/spec.alpha-0.3.218.jar --copy-configs --skip-lint
+Configs copied:
+- .clj-kondo/org.typedclojure/typed.clj.runtime
+linting took 121ms, errors: 0, warnings: 0
++ tree .clj-kondo
+.clj-kondo
+└── org.typedclojure
+    └── typed.clj.runtime
+        ├── clojure
+        │   └── core
+        │       └── typed
+        │           ├── contract_utils.clj
+        │           ├── internal
+        │           │   └── add_destructure_blame_form.clj
+        │           ├── internal.clj
+        │           ├── macros.clj
+        │           ├── platform_case.clj
+        │           └── special_form.clj
+        ├── config.edn
+        └── typed
+            └── clj
+                └── runtime
+                    └── clj_kondo_hooks.clj
+
+10 directories, 8 files
++ clojure -M:clj-kondo --lint src --config '{:output {:format :text :summary false}}'
