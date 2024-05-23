@@ -1,5 +1,5 @@
 {:deps {org.clojure/clojure {:mvn/version "1.11.1"}
         org.typedclojure/typed.clj.runtime {:mvn/version "1.2.1"}}
  :aliases {:clj-kondo
-           {:replace-deps {clj-kondo/clj-kondo {:mvn/version "2024.03.13"}}
+           {:replace-deps {clj-kondo/clj-kondo {:mvn/version "2024.05.22"}}
             :main-opts ["-m" "clj-kondo.main"]}}}
